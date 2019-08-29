@@ -44,22 +44,18 @@ class App extends Component {
       // console.log(ele.name)
       return (
         <div className="body">
-        <div key={ele.id} className="user-info">
-          <h3>
-            {`FirstName: ${ele.name.first}`}
-            </h3>
-            <h3>
-            {`LastName: ${ele.name.last}`}
-          </h3>
-          <h3>{`From: ${ele.city},${ele.country}`}</h3>
-          <h3>{`Employer: ${ele.employer}`}</h3>
-          <h3>{`Job Title: ${ele.title}`}</h3>
-          <h3>{`Favorite Movies: ${ele.favoriteMovies}`}</h3>
-          <ol className="movies">
-            <li>{ele.favoriteMovies[0]}</li>
-            <li>{ele.favoriteMovies[1]}</li>
-            <li>{ele.favoriteMovies[2]}</li>
-          </ol>
+          <div key={ele.id} className="user-info">
+            <h3>{`FirstName: ${ele.name.first}`}</h3>
+            <h3>{`LastName: ${ele.name.last}`}</h3>
+            <h3>{`From: ${ele.city},${ele.country}`}</h3>
+            <h3>{`Employer: ${ele.employer}`}</h3>
+            <h3>{`Job Title: ${ele.title}`}</h3>
+            <h3>{`Favorite Movies: ${ele.favoriteMovies}`}</h3>
+            <ol className="movies">
+              <li>{ele.favoriteMovies[0]}</li>
+              <li>{ele.favoriteMovies[1]}</li>
+              <li>{ele.favoriteMovies[2]}</li>
+            </ol>
           </div>
         </div>
       );
@@ -67,10 +63,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="head">Home</header>
-        
-        <ButtonPrev className="prev" previous={this.previous} />
-        <ButtonNext className="next" next={this.next} />
+
         <div>{dataFn[this.state.index]}</div>
+        <div className="button">
+          <ButtonPrev className="prev" previous={this.previous} />
+          <ButtonNext className="next" next={this.next} />
+          </div>
       </div>
     );
   }
